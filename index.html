@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Building Workout</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&family=Moul&family=Moulpali&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/8881/8881792.png">
+    <style>
+        :root {
+            --primary: #ff4d00;
+            --primary-dark: #e04500;
+            --secondary: #1a1a1a;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333;
+            --text-light: #777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Moul', serif;
+            font-weight: normal;
+        }
+
+        .model-text {
+            font-family: 'Moulpali', serif;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-toggle span {
+            padding: 0 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-toggle .active {
+            color: var(--primary);
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch:before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch.en:before {
+            transform: translateX(30px);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .header-content {
+            max-width: 600px;
+            z-index: 5;
+        }
+
+        .header-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .header-content h1 span {
+            color: var(--primary);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Programs Section */
+        .programs {
+            background: #f5f5f5;
+        }
+
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .program-card:hover .program-img img {
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            padding: 20px;
+        }
+
+        .program-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .program-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .program-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Trainers Section */
+        .trainers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .trainer-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .trainer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .trainer-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .trainer-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .trainer-card:hover .trainer-img img {
+            transform: scale(1.1);
+        }
+
+        .trainer-social {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .trainer-card:hover .trainer-social {
+            opacity: 1;
+        }
+
+        .trainer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .trainer-social a:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        .trainer-info {
+            padding: 20px;
+        }
+
+        .trainer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .trainer-info p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
+        }
+
+        .testimonials .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary);
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Kantumruy Pro', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 77, 0, 0.2);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 50px 10% 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content h1 {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-img {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .header-content .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Khmer Language Styles */
+        body.khmer .en-content {
+            display: none;
+        }
+
+        body:not(.khmer) .kh-content {
+            display: none;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <span class="en active" onclick="changeLanguage('en')">EN</span>
+        <div class="toggle-switch en" onclick="toggleLanguage()"></div>
+        <span class="kh" onclick="changeLanguage('kh')">ខ្មែរ</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/8881/8881792.png" alt="Logo">
+                <span class="en-content">BODY.BUILD</span>
+                <span class="kh-content">ហាត់ប្រាណ</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="en-content">Home</a><a href="#" class="kh-content">ទំព័រដើម</a></li>
+                <li><a href="#about" class="en-content">About</a><a href="#about" class="kh-content">អំពីយើង</a></li>
+                <li><a href="#programs" class="en-content">Programs</a><a href="#programs" class="kh-content">កម្មវិធី</a></li>
+                <li><a href="#trainers" class="en-content">Trainers</a><a href="#trainers" class="kh-content">គ្រូបង្វឹក</a></li>
+                <li><a href="#contact" class="en-content">Contact</a><a href="#contact" class="kh-content">ទំនាក់ទំនង</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1 class="slide-up">
+                <span class="en-content">BUILD YOUR</span>
+                <span class="kh-content">សាងសង់</span>
+                <br>
+                <span class="model-text en-content">DREAM BODY</span>
+                <span class="model-text kh-content">រាងកាយដ៏ស្រស់ស្អាត</span>
+            </h1>
+            <p class="fade-in">
+                <span class="en-content">Transform your body and mind with our professional training programs designed to help you achieve your fitness goals.</span>
+                <span class="kh-content">ផ្លាស់ប្តូររាងកាយ និងចិត្តរបស់អ្នកជាមួយនឹងកម្មវិធីហ្វឹកហាត់វិជ្ជាជីវៈរបស់យើង ដែលបានរចនាឡើងដើម្បីជួយអ្នកសម្រេចបាននូវគោលដៅហ្វឹកហាត់របស់អ្នក។</span>
+            </p>
+            <div class="fade-in">
+                <a href="#programs" class="btn en-content">Get Started</a>
+                <a href="#programs" class="btn kh-content">ចាប់ផ្តើម</a>
+                <a href="#contact" class="btn btn-outline en-content">Contact Us</a>
+                <a href="#contact" class="btn btn-outline kh-content">ទំនាក់ទំនង</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en-content">ABOUT US</h2>
+            <h2 class="kh-content">អំពីយើង</h2>
+            <p class="en-content">We are dedicated to helping you achieve your fitness goals with personalized training programs.</p>
+            <p class="kh-content">យើងប្តេជ្ញាចិត្តជួយអ្នកឱ្យសម្រេចបាននូវគោលដៅហ្វឹកហាត់របស់អ្នកជាមួយនឹងកម្មវិធីហ្វឹកហាត់ដែលបានប្តេជ្ញាចិត្តជាលក្ខណៈផ្ទាល់ខ្លួន។</p>
+        </div>
+        <div class="about-content" data-aos="fade-up">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Us">
+            </div>
+            <div class="about-text">
+                <h3 class="en-content">Why Choose Us?</h3>
+                <h3 class="kh-content">ហេតុអ្វីត្រូវជ្រើសរើសយើង?</h3>
+                <p class="en-content">Our gym is equipped with state-of-the-art facilities and staffed by certified trainers who are passionate about helping you reach your full potential.</p>
+                <p class="kh-content">ហាងហ្វឹកហាត់របស់យើងមានបរិក្ខារទំនើប និងបុគ្គលិកដែលមានវិញ្ញាបនបត្រដែលមានឆន្ទៈក្នុងការជួយអ្នកឱ្យឈានដល់សក្តានុពលពេញលេញរបស់អ្នក។</p>
+                <p class="en-content">We offer a variety of programs tailored to different fitness levels, from beginners to advanced athletes.</p>
+                <p class="kh-content">យើងផ្តល់នូវកម្មវិធីផ្សេងៗគ្នាដែលត្រូវបានប្តេជ្ញាចិត្តសម្រាប់កម្រិតហ្វឹកហាត់ផ្សេងៗ ពីអ្នកចាប់ផ្តើមដល់អ្នកហាត់ប្រាណកម្រិតខ្ពស់។</p>
+                <a href="#programs" class="btn en-content">Our Programs</a>
+                <a href="#programs" class="btn kh-content">កម្មវិធីរបស់យើង</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section programs">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en-content">OUR PROGRAMS</h2>
+            <h2 class="kh-content">កម្មវិធីរបស់យើង</h2>
+            <p class="en-content">Choose from our variety of fitness programs designed to meet your specific needs.</p>
+            <p class="kh-content">ជ្រើសរើសពីកម្មវិធីហ្វឹកហាត់ចម្រុះរបស់យើងដែលបានរចនាឡើងដើម្បីបំពេញតម្រូវការជាក់លាក់របស់អ្នក។</p>
+        </div>
+        <div class="programs-container" data-aos="fade-up">
+            <div class="program-card">
+                <div class="program-img">
+                    <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1631&q=80" alt="Body Building">
+                </div>
+                <div class="program-content">
+                    <h3 class="en-content">Body Building</h3>
+                    <h3 class="kh-content">ការសាងសង់រាងកាយ</h3>
+                    <p class="en-content">Build muscle mass and strength with our specialized body building program.</p>
+                    <p class="kh-content">សាងសង់ម៉ាសសាច់ដុំ និងកម្លាំងជាមួយនឹងកម្មវិធីសាងសង់រាងកាយពិសេសរបស់យើង។</p>
+                    <div class="program-meta">
+                        <span class="program-price">$99/month</span>
+                        <a href="#contact" class="btn en-content">Join Now</a>
+                        <a href="#contact" class="btn kh-content">ចូលរួមឥឡូវ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-img">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Weight Loss">
+                </div>
+                <div class="program-content">
+                    <h3 class="en-content">Weight Loss</h3>
+                    <h3 class="kh-content">ការបំបាត់ទម្ងន់</h3>
+                    <p class="en-content">Lose weight effectively with our scientifically designed weight loss program.</p>
+                    <p class="kh-content">បំបាត់ទម្ងន់ដោយមានប្រសិទ្ធភាពជាមួយនឹងកម្មវិធីបំបាត់ទម្ងន់ដែលបានរចនាឡើងតាមវិធីសាក្សីរបស់យើង។</p>
+                    <div class="program-meta">
+                        <span class="program-price">$89/month</span>
+                        <a href="#contact" class="btn en-content">Join Now</a>
+                        <a href="#contact" class="btn kh-content">ចូលរួមឥឡូវ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-img">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="CrossFit">
+                </div>
+                <div class="program-content">
+                    <h3 class="en-content">CrossFit</h3>
+                    <h3 class="kh-content">ក្រូសហ្វីត</h3>
+                    <p class="en-content">High-intensity functional training that will push your limits.</p>
+                    <p class="kh-content">ការហ្វឹកហាត់មុខងារអាំងតង់ស៊ីតេខ្ពស់ដែលនឹងជំរុញដែនកំណត់របស់អ្នក។</p>
+                    <div class="program-meta">
+                        <span class="program-price">$109/month</span>
+                        <a href="#contact" class="btn en-content">Join Now</a>
+                        <a href="#contact" class="btn kh-content">ចូលរួមឥឡូវ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="section">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en-content">OUR TRAINERS</h2>
+            <h2 class="kh-content">គ្រូបង្វឹករបស់យើង</h2>
+            <p class="en-content">Meet our team of certified and experienced fitness trainers.</p>
+            <p class="kh-content">ស្គាល់ក្រុមគ្រូបង្វឹកហ្វឹកហាត់ដែលមានវិញ្ញាបនបត្រ និងបទពិសោធន៍របស់យើង។</p>
+        </div>
+        <div class="trainers-container" data-aos="fade-up">
+            <div class="trainer-card">
+                <div class="trainer-img">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Trainer 1">
+                    <div class="trainer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="en-content">John Smith</h3>
+                    <h3 class="kh-content">លោក ចន ស្មីត</h3>
+                    <p class="en-content">Body Building Expert</p>
+                    <p class="kh-content">អ្នកជំនាញសាងសង់រាងកាយ</p>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-img">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Trainer 2">
+                    <div class="trainer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="en-content">Sarah Johnson</h3>
+                    <h3 class="kh-content">នារី សារ៉ា ចនសុន</h3>
+                    <p class="en-content">Fitness Coach</p>
+                    <p class="kh-content">គ្រូបង្វឹកហ្វឹកហាត់</p>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-img">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Trainer 3">
+                    <div class="trainer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="trainer-info">
+                    <h3 class="en-content">Mike Davis</h3>
+                    <h3 class="kh-content">លោក ម៉ាយឃ័រ ដាវីស</h3>
+                    <p class="en-content">CrossFit Trainer</p>
+                    <p class="kh-content">គ្រូបង្វឹកក្រូសហ្វីត</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en-content">TESTIMONIALS</h2>
+            <h2 class="kh-content">សេចក្តីអំណាច</h2>
+            <p class="en-content">What our clients say about us</p>
+            <p class="kh-content">អ្វីដែលអតិថិជនរបស់យើងនិយាយអំពីយើង</p>
+        </div>
+        <div class="testimonials-container" data-aos="fade-up">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p class="en-content">"The trainers here are amazing! They helped me transform my body in just 3 months. Highly recommended!"</p>
+                    <p class="kh-content">"គ្រូបង្វឹកនៅទីនេះអស្ចារ្យណាស់! ពួកគេបានជួយខ្ញុំផ្លាស់ប្តូររាងកាយរបស់ខ្ញុំក្នុងរយៈពេលតែ ៣ខែប៉ុណ្ណោះ។ ផ្តល់អនុសាសន៍ខ្ពស់!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1">
+                    <div class="author-info">
+                        <h4 class="en-content">David Wilson</h4>
+                        <h4 class="kh-content">លោក ដាវីដ វីលសុន</h4>
+                        <p class="en-content">Body Building Client</p>
+                        <p class="kh-content">អតិថិជនសាងសង់រាងកាយ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p class="en-content">"I lost 15kg in 4 months with their weight loss program. The trainers are very supportive and knowledgeable."</p>
+                    <p class="kh-content">"ខ្ញុំបានបាត់បង់ ១៥គីឡូក្នុងរយៈពេល ៤ខែជាមួយកម្មវិធីបំបាត់ទម្ងន់របស់ពួកគេ។ គ្រូបង្វឹកមានការគាំទ្រ និងចេះដឹងច្រើន។"</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2">
+                    <div class="author-info">
+                        <h4 class="en-content">Emily Brown</h4>
+                        <h4 class="kh-content">នារី អេមីលី ប្រោន</h4>
+                        <p class="en-content">Weight Loss Client</p>
+                        <p class="kh-content">អតិថិជនបំបាត់ទម្ងន់</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p class="en-content">"The CrossFit program challenged me like never before. I've never been in better shape in my life!"</p>
+                    <p class="kh-content">"កម្មវិធីក្រូសហ្វីតបានជំរុញខ្ញុំដូចមិនធ្លាប់មានពីមុន។ ខ្ញុំមិនដែលមានសភាពល្អប៉ុណ្ណោះក្នុងជីវិតរបស់ខ្ញុំទេ!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client 3">
+                    <div class="author-info">
+                        <h4 class="en-content">Robert Taylor</h4>
+                        <h4 class="kh-content">លោក រូបឺត ថេយ៉ូ</h4>
+                        <p class="en-content">CrossFit Client</p>
+                        <p class="kh-content">អតិថិជនក្រូសហ្វីត</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en-content">CONTACT US</h2>
+            <h2 class="kh-content">ទំនាក់ទំនងជាមួយយើង</h2>
+            <p class="en-content">Get in touch with us for any inquiries or to start your fitness journey.</p>
+            <p class="kh-content">ទាក់ទងមកយើងសម្រាប់សំណួរណាមួយ ឬដើម្បីចាប់ផ្តើមដំណើរហ្វឹកហាត់របស់អ្នក។</p>
+        </div>
+        <div class="contact-container" data-aos="fade-up">
+            <div class="contact-info">
+                <h3 class="en-content">Contact Information</h3>
+                <h3 class="kh-content">ព័ត៌មានទំនាក់ទំនង</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text">
+                            <h4 class="en-content">Address</h4>
+                            <h4 class="kh-content">អាសយដ្ឋាន</h4>
+                            <p class="en-content">123 Fitness Street, Phnom Penh, Cambodia</p>
+                            <p class="kh-content">១២៣ ផ្លូវហ្វឹកហាត់ ភ្នំពេញ កម្ពុជា</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-text">
+                            <h4 class="en-content">Phone</h4>
+                            <h4 class="kh-content">ទូរស័ព្ទ</h4>
+                            <p>+855 12 345 678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text">
+                            <h4 class="en-content">Email</h4>
+                            <h4 class="kh-content">អ៊ីមែល</h4>
+                            <p>info@BODY.BUILD.com</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="en-content">Follow Us</h3>
+                <h3 class="kh-content">តាមដានយើង</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" class="en-content" required>
+                        <input type="text" placeholder="ឈ្មោះរបស់អ្នក" class="kh-content" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" class="en-content" required>
+                        <input type="email" placeholder="អ៊ីមែលរបស់អ្នក" class="kh-content" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" class="en-content" required>
+                        <input type="text" placeholder="ប្រធានបទ" class="kh-content" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" class="en-content" required></textarea>
+                        <textarea placeholder="សាររបស់អ្នក" class="kh-content" required></textarea>
+                    </div>
+                    <button type="submit" class="btn en-content">Send Message</button>
+                    <button type="submit" class="btn kh-content">ផ្ញើសារ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#" class="footer-logo">
+            <!-- <img src="https://cdn-icons-png.flaticon.com/512/8881/8881792.png" alt="Logo"> -->
+            <span class="en-content">BODY.BUILD</span>
+            <span class="kh-content">ហាត់ប្រាណ</span>
+        </a>
+        <div class="footer-links" style="display: none;">
+            <a href="#" class="en-content">Home</a>
+            <a href="#" class="kh-content">ទំព័រដើម</a>
+            <a href="#about" class="en-content">About</a>
+            <a href="#about" class="kh-content">អំពីយើង</a>
+            <a href="#programs" class="en-content">Programs</a>
+            <a href="#programs" class="kh-content">កម្មវិធី</a>
+            <a href="#trainers" class="en-content">Trainers</a>
+            <a href="#trainers" class="kh-content">គ្រូបង្វឹក</a>
+            <a href="#contact" class="en-content">Contact</a>
+            <a href="#contact" class="kh-content">ទំនាក់ទំនង</a>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="copyright">
+            <p class="en-content">2025 - All rights reserved. Provide by Mr. Phekdey PHORN</p>
+            <p class="kh-content">2025 - រក្សារ​សិទ្ធិ​គ្រប់​យ៉ាង ដោយលោក ផន ភក្ដី។</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Language toggle functionality
+        function toggleLanguage() {
+            const toggleSwitch = document.querySelector('.toggle-switch');
+            const body = document.body;
+            
+            if (toggleSwitch.classList.contains('en')) {
+                toggleSwitch.classList.remove('en');
+                body.classList.add('khmer');
+            } else {
+                toggleSwitch.classList.add('en');
+                body.classList.remove('khmer');
+            }
+            
+            // Update active language text
+            document.querySelector('.language-toggle .en').classList.toggle('active');
+            document.querySelector('.language-toggle .kh').classList.toggle('active');
+        }
+
+        function changeLanguage(lang) {
+            const toggleSwitch = document.querySelector('.toggle-switch');
+            const body = document.body;
+            
+            if (lang === 'kh') {
+                toggleSwitch.classList.remove('en');
+                body.classList.add('khmer');
+                document.querySelector('.language-toggle .en').classList.remove('active');
+                document.querySelector('.language-toggle .kh').classList.add('active');
+            } else {
+                toggleSwitch.classList.add('en');
+                body.classList.remove('khmer');
+                document.querySelector('.language-toggle .en').classList.add('active');
+                document.querySelector('.language-toggle .kh').classList.remove('active');
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(26, 26, 26, 0.9)';
+                nav.style.padding = '15px 10%';
+                nav.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'transparent';
+                nav.style.padding = '20px 10%';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
